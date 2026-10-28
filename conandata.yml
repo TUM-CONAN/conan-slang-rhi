@@ -1,0 +1,7 @@
+sources:
+  "2026.10.27":
+    url: "https://github.com/shader-slang/slang-rhi/archive/a521c01d8c8f30feaca979e1874b97e56d66fb7a.tar.gz"
+    sha256: "4eee22b8bbd66d9df880036c830f445b6fbdb6b1ca473ef399b1f383215f006b"
+    strip_root: true
+    slang: "2026.17.1"
+    vulkan_headers: "1.4.350.0"

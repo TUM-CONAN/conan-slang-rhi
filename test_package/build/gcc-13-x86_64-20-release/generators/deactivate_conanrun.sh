@@ -1,0 +1,1 @@
+. "/home/ecku/develop/holoscan/external_sources/conan-slang-rhi/test_package/build/gcc-13-x86_64-20-release/generators/deactivate_conanrunenv-release-x86_64.sh"

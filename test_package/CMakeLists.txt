@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.20)
+project(test_slang_rhi CXX)
+find_package(slang-rhi REQUIRED CONFIG)
+add_executable(test_slang_rhi test_slang_rhi.cpp)
+target_link_libraries(test_slang_rhi PRIVATE slang-rhi::slang-rhi)
+target_compile_features(test_slang_rhi PRIVATE cxx_std_20)

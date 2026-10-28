@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/ecku/develop/holoscan/external_sources/conan-slang-rhi/test_package/build/gcc-13-x86_64-20-release/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
