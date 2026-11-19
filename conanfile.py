@@ -60,6 +60,10 @@ class SlangRhiConan(ConanFile):
         tc.cache_variables["SLANG_RHI_ENABLE_CUDA"] = True
         # FetchPackage(vulkan_headers ...) -> use the Conan package instead of a download.
         tc.cache_variables["FETCHCONTENT_SOURCE_DIR_VULKAN_HEADERS"] = vulkan.package_folder
+        if self.settings.os == "Macos":
+            # Upstream links Foundation/QuartzCore for src/cocoa-util.mm only as INTERFACE (fine
+            # for a static lib); the shared library itself needs them (CAMetalLayer, objc_*).
+            tc.extra_sharedlinkflags.append("-framework Foundation -framework QuartzCore")
         tc.generate()
         CMakeDeps(self).generate()
 
@@ -78,3 +82,5 @@ class SlangRhiConan(ConanFile):
         self.cpp_info.libs = ["slang-rhi"]
         if self.settings.os == "Linux":
             self.cpp_info.system_libs = ["dl", "pthread"]
+        elif self.settings.os == "Macos":
+            self.cpp_info.frameworks = ["Foundation", "QuartzCore"]
